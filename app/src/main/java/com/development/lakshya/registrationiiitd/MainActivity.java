@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private static boolean onCreate=false, onResume=false, onStop=false, onStart=false, onRestart=false, onDestroy=false,
             onPause=false;
 
+    private EditText et_name, et_roll,et_branch,et_course1,et_course2,et_course3,et_course4;
+
     public static final String TAG = "MobileComputing";
 
     @Override
@@ -28,45 +30,98 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        et_name = findViewById(R.id.et_name);
+        et_roll = findViewById(R.id.et_rollNumber);
+        et_branch = findViewById(R.id.et_branch);
+        et_course1 = findViewById(R.id.et_course1);
+        et_course2 = findViewById(R.id.et_course2);
+        et_course3 = findViewById(R.id.et_course3);
+        et_course4 = findViewById(R.id.et_course4);
+
         ((Button)findViewById(R.id.bv_submit)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = ((EditText)findViewById(R.id.et_name)).getText().toString();
-                String roll = ((EditText)findViewById(R.id.et_rollNumber)).getText().toString();
-                String branch = ((EditText)findViewById(R.id.et_branch)).getText().toString();
-                String course1 = ((EditText)findViewById(R.id.et_course1)).getText().toString();
-                String course2 = ((EditText)findViewById(R.id.et_course2)).getText().toString();
-                String course3 = ((EditText)findViewById(R.id.et_course3)).getText().toString();
-                String course4 = ((EditText)findViewById(R.id.et_course4)).getText().toString();
+                String name = et_name.getText().toString();
+                String roll = et_roll.getText().toString();
+                String branch = et_branch.getText().toString();
+                String course1 = et_course1.getText().toString();
+                String course2 = et_course2.getText().toString();
+                String course3 = et_course3.getText().toString();
+                String course4 = et_course4.getText().toString();
 
-                Student student = new Student(name,roll,branch,course1,course2,course3,course4);
+                boolean validation = validate(name, roll, branch, course1, course2, course3, course4);
 
-                ((EditText)findViewById(R.id.et_name)).setText("");
-                ((EditText)findViewById(R.id.et_rollNumber)).setText("");
-                ((EditText)findViewById(R.id.et_branch)).setText("");
-                ((EditText)findViewById(R.id.et_course1)).setText("");
-                ((EditText)findViewById(R.id.et_course2)).setText("");
-                ((EditText)findViewById(R.id.et_course3)).setText("");
-                ((EditText)findViewById(R.id.et_course4)).setText("");
+                if(validation) {
 
-                Intent intent = new Intent(MainActivity.this,DisplayActivity.class);
-                intent.putExtra("student",student);
-                startActivity(intent);
+                    Student student = new Student(name, roll, branch, course1, course2, course3, course4);
+
+                    et_name.setText("");
+                    et_roll.setText("");
+                    et_branch.setText("");
+                    et_course1.setText("");
+                    et_course2.setText("");
+                    et_course3.setText("");
+                    et_course4.setText("");
+
+                    Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+                    intent.putExtra("student", student);
+                    startActivity(intent);
+                }
             }
         });
 
         ((Button)findViewById(R.id.bv_clear)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((EditText)findViewById(R.id.et_name)).setText("");
-                ((EditText)findViewById(R.id.et_rollNumber)).setText("");
-                ((EditText)findViewById(R.id.et_branch)).setText("");
-                ((EditText)findViewById(R.id.et_course1)).setText("");
-                ((EditText)findViewById(R.id.et_course2)).setText("");
-                ((EditText)findViewById(R.id.et_course3)).setText("");
-                ((EditText)findViewById(R.id.et_course4)).setText("");
+                et_name.setText("");
+                et_roll.setText("");
+                et_branch.setText("");
+                et_course1.setText("");
+                et_course2.setText("");
+                et_course3.setText("");
+                et_course4.setText("");
             }
         });
+    }
+
+    private boolean validate(String name, String roll, String branch, String course1, String course2, String course3, String course4) {
+
+        if(name.length()==0){
+            et_name.requestFocus();
+            et_name.setError("Please enter a name");
+            return false;
+        }
+        if(roll.length()==0){
+            et_roll.requestFocus();
+            et_roll.setError("Please enter a valid roll number");
+            return false;
+        }
+        if(branch.length()==0){
+            et_branch.requestFocus();
+            et_branch.setError("Please enter your branch");
+            return false;
+        }
+        if(course1.length()==0){
+            et_course1.requestFocus();
+            et_course1.setError("Please enter all the 4 courses");
+            return false;
+        }
+        if(course2.length()==0){
+            et_course2.requestFocus();
+            et_course2.setError("Please enter all the 4 courses");
+            return false;
+        }
+        if(course3.length()==0){
+            et_course3.requestFocus();
+            et_course3.setError("Please enter all the 4 courses");
+            return false;
+        }
+        if(course4.length()==0){
+            et_course4.requestFocus();
+            et_course4.setError("Please enter all the 4 courses");
+            return false;
+        }
+        return true;
     }
 
 

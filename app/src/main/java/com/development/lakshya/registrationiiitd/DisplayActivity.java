@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,6 +12,8 @@ public class DisplayActivity extends AppCompatActivity {
 
     private static boolean onCreate=false, onResume=false, onStop=false, onStart=false, onRestart=false, onDestroy=false,
             onPause=false;
+
+    private TextView tv_name, tv_roll,tv_branch,tv_course1,tv_course2,tv_course3,tv_course4;
 
     public static final String TAG = "MobileComputing";
     
@@ -27,14 +30,21 @@ public class DisplayActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Student student = (Student) intent.getSerializableExtra("student");
 
-        ((TextView)findViewById(R.id.tv_name)).setText(student.getName());
-        ((TextView)findViewById(R.id.tv_roll)).setText(student.getRoll());
-        ((TextView)findViewById(R.id.tv_branch)).setText(student.getBranch());
-        ((TextView)findViewById(R.id.tv_course1)).setText(student.getCourse1());
-        ((TextView)findViewById(R.id.tv_course2)).setText(student.getCourse2());
-        ((TextView)findViewById(R.id.tv_course3)).setText(student.getCourse3());
-        ((TextView)findViewById(R.id.tv_course4)).setText(student.getCourse4());
+        tv_name = findViewById(R.id.tv_name);
+        tv_roll = findViewById(R.id.tv_roll);
+        tv_branch = findViewById(R.id.tv_branch);
+        tv_course1 = findViewById(R.id.tv_course1);
+        tv_course2 = findViewById(R.id.tv_course2);
+        tv_course3 = findViewById(R.id.tv_course3);
+        tv_course4 = findViewById(R.id.tv_course4);
 
+        tv_name.setText(tv_name.getText() + "  : " + student.getName());
+        tv_roll.setText(tv_roll.getText() + "  : " + student.getRoll());
+        tv_branch.setText(tv_branch.getText() + "  : " + student.getBranch());
+        tv_course1.setText(tv_course1.getText() + "  " + student.getCourse1());
+        tv_course2.setText(tv_course2.getText() + "  " + student.getCourse2());
+        tv_course3.setText(tv_course3.getText() + "  " + student.getCourse3());
+        tv_course4.setText(tv_course4.getText() + "  " + student.getCourse4());
 
     }
 

@@ -16,14 +16,15 @@
         android:layout_marginTop="50dp"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:text="Student Profile" />
+        android:text="@string/student_profile" />
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="59dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="44dp"
+        android:text="@string/name"
         android:textSize="24sp" />
 
     <LinearLayout
@@ -35,10 +36,9 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="59dp"
-            android:layout_marginStart="59dp"
+            android:layout_marginLeft="32dp"
             android:layout_marginTop="16dp"
-            android:text="Roll Number"
+            android:text="@string/roll_no"
             android:textSize="24sp" />
 
         <TextView
@@ -46,9 +46,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:text="Branch"
+            android:layout_marginLeft="16dp"
+            android:text="@string/branch"
             android:textSize="24sp"
             android:layout_marginTop="16dp" />
 
@@ -58,35 +57,35 @@
         android:id="@+id/tv_course1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="59dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="16dp"
-        android:text="Course1"
+        android:text="@string/course1"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_course2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="59dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="16dp"
-        android:text="Course2"
+        android:text="@string/course2"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_course3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="59dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="16dp"
-        android:text="Course3"
+        android:text="@string/course3"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/tv_course4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="59dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="16dp"
-        android:text="Course4"
+        android:text="@string/course4"
         android:textSize="24sp"/>
 </LinearLayout>
