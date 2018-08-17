@@ -2,11 +2,11 @@ package com.development.lakshya.registrationiiitd;
 
 import java.io.Serializable;
 
-public class Student implements Serializable {
+public class Student_A1_2016240 implements Serializable {
 
     private String name,roll,branch,course1,course2,course3,course4;
 
-    public Student(String name, String roll, String branch, String course1, String course2, String course3, String course4) {
+    public Student_A1_2016240(String name, String roll, String branch, String course1, String course2, String course3, String course4) {
         this.name = name;
         this.roll = roll;
         this.branch = branch;
