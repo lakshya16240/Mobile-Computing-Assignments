@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,19 +17,15 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
-import com.tmall.ultraviewpager.UltraViewPager;
-import com.tmall.ultraviewpager.transformer.UltraDepthScaleTransformer;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FragmentSongView extends Fragment {
+public class FragmentSongView_A2_2016240 extends Fragment {
 
     private static final int PERMISSION_REQUEST_CODE = 100 ;
     private int[] mAudioPath;
@@ -98,7 +93,7 @@ public class FragmentSongView extends Fragment {
                 intentFilter = new IntentFilter();
                 intentFilter.addAction(NEXT_SONG);
                 intentFilter.addAction(PREV_SONG);
-                intentFilter.addAction(DownloadSongService.DOWNLOADED_SONG);
+                intentFilter.addAction(DownloadSongService_A2_2016240.DOWNLOADED_SONG);
                 getActivity().registerReceiver(broadcastReceiver,intentFilter);
             }
 
@@ -137,7 +132,7 @@ public class FragmentSongView extends Fragment {
                 getActivity().findViewById(R.id.iv_pauseSong).setVisibility(View.VISIBLE);
                 SongsPlaybackService.IS_RUNNING = true;
             }
-            else if(intent.getAction().equals(DownloadSongService.DOWNLOADED_SONG)){
+            else if(intent.getAction().equals(DownloadSongService_A2_2016240.DOWNLOADED_SONG)){
                 Song song = (Song) intent.getSerializableExtra("Song");
                 songsList.add(song);
                 songsAdapter.notifyDataSetChanged();

@@ -1,33 +1,18 @@
 package com.development.lakshya.musicplayer;
 
-import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.media.MediaPlayer;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.JobIntentService;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_A2_2016240 extends AppCompatActivity {
 
     private ImageView iv_playSong, iv_pauseSong, iv_previousSong, iv_nextSong, iv_downloadSong;
     private ComponentName component;
@@ -60,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(SongsPlaybackService.IS_RUNNING) {
-                    MainActivity.this.findViewById(R.id.iv_playSong).setVisibility(View.INVISIBLE);
-                    MainActivity.this.findViewById(R.id.iv_pauseSong).setVisibility(View.VISIBLE);
+                    MainActivity_A2_2016240.this.findViewById(R.id.iv_playSong).setVisibility(View.INVISIBLE);
+                    MainActivity_A2_2016240.this.findViewById(R.id.iv_pauseSong).setVisibility(View.VISIBLE);
                     Intent broadcastIntent = new Intent();
                     broadcastIntent.setAction(SongsPlaybackService.PLAY_SONG);
-                    MainActivity.this.sendBroadcast(broadcastIntent);
+                    MainActivity_A2_2016240.this.sendBroadcast(broadcastIntent);
                 }
             }
         });
@@ -73,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (SongsPlaybackService.IS_RUNNING) {
-                    MainActivity.this.findViewById(R.id.iv_playSong).setVisibility(View.VISIBLE);
-                    MainActivity.this.findViewById(R.id.iv_pauseSong).setVisibility(View.INVISIBLE);
+                    MainActivity_A2_2016240.this.findViewById(R.id.iv_playSong).setVisibility(View.VISIBLE);
+                    MainActivity_A2_2016240.this.findViewById(R.id.iv_pauseSong).setVisibility(View.INVISIBLE);
                     Intent broadcastIntent = new Intent();
                     broadcastIntent.setAction(SongsPlaybackService.PAUSE_SONG);
-                    MainActivity.this.sendBroadcast(broadcastIntent);
+                    MainActivity_A2_2016240.this.sendBroadcast(broadcastIntent);
                 }
             }
         });
@@ -88,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(SongsPlaybackService.IS_RUNNING){
                     Intent broadcastIntent = new Intent();
-                    broadcastIntent.setAction(FragmentSongView.NEXT_SONG);
-                    MainActivity.this.sendBroadcast(broadcastIntent);
+                    broadcastIntent.setAction(FragmentSongView_A2_2016240.NEXT_SONG);
+                    MainActivity_A2_2016240.this.sendBroadcast(broadcastIntent);
                 }
             }
         });
@@ -99,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(SongsPlaybackService.IS_RUNNING){
                     Intent broadcastIntent = new Intent();
-                    broadcastIntent.setAction(FragmentSongView.PREV_SONG);
-                    MainActivity.this.sendBroadcast(broadcastIntent);
+                    broadcastIntent.setAction(FragmentSongView_A2_2016240.PREV_SONG);
+                    MainActivity_A2_2016240.this.sendBroadcast(broadcastIntent);
                 }
             }
         });
@@ -108,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         iv_downloadSong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DownloadSongService.class);
+                Intent intent = new Intent(MainActivity_A2_2016240.this, DownloadSongService_A2_2016240.class);
                 startService(intent);
             }
         });
@@ -140,6 +125,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(systemReceivers);
-        MainActivity.this.getPackageManager().setComponentEnabledSetting(component, PackageManager.COMPONENT_ENABLED_STATE_DISABLED , PackageManager.DONT_KILL_APP);
+        MainActivity_A2_2016240.this.getPackageManager().setComponentEnabledSetting(component, PackageManager.COMPONENT_ENABLED_STATE_DISABLED , PackageManager.DONT_KILL_APP);
     }
 }

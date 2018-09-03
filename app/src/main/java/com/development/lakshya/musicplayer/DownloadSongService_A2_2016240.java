@@ -9,12 +9,12 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
 
-public class DownloadSongService extends Service {
+public class DownloadSongService_A2_2016240 extends Service {
 
     public static final String TAG = "DownloadService";
     public static final String DOWNLOADED_SONG = "SongDownloaded";
     private Song downloadedSong;
-    public DownloadSongService() {
+    public DownloadSongService_A2_2016240() {
     }
 
 
@@ -32,7 +32,7 @@ public class DownloadSongService extends Service {
             Object[] objects = new Object[2];
             objects[0] = getApplicationContext();
             objects[1] = "http://faculty.iiitd.ac.in/~mukulika/s1.mp3";
-            SongDownloadAsyncTask downloadAsyncTask = new SongDownloadAsyncTask(new DownloadedSongResponse() {
+            SongDownloadAsyncTask_A2_2016240 downloadAsyncTask = new SongDownloadAsyncTask_A2_2016240(new DownloadedSongResponse_A2_2016240() {
                 @Override
                 public void getDownloadedSong(Song song) {
                     downloadedSong = song;

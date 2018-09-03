@@ -10,21 +10,20 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class SongDownloadAsyncTask extends AsyncTask<Object, String, String> {
+public class SongDownloadAsyncTask_A2_2016240 extends AsyncTask<Object, String, String> {
 
     private String fileName;
     private Context context;
     private Uri uri;
     public static final String TAG = "SongDownload";
 
-    private DownloadedSongResponse downloadedSongResponse;
+    private DownloadedSongResponse_A2_2016240 downloadedSongResponse;
 
-    public SongDownloadAsyncTask(DownloadedSongResponse downloadedSongResponse) {
+    public SongDownloadAsyncTask_A2_2016240(DownloadedSongResponse_A2_2016240 downloadedSongResponse) {
         this.downloadedSongResponse = downloadedSongResponse;
     }
 
