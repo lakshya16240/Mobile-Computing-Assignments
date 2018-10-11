@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity_A3_2016240 extends AppCompatActivity {
 
     public static FrameLayout quizzingFrame;
     private static final int PERMISSION_REQUEST_CODE = 100 ;

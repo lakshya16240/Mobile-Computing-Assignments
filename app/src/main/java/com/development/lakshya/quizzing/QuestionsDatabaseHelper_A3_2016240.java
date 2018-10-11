@@ -8,12 +8,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-public class QuestionsDatabaseHelper extends SQLiteOpenHelper {
+public class QuestionsDatabaseHelper_A3_2016240 extends SQLiteOpenHelper {
 
     private int DB_VERSION;
     public static final String TAG = "Database";
 
-    public QuestionsDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public QuestionsDatabaseHelper_A3_2016240(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
         this.DB_VERSION = version;
     }

@@ -1,6 +1,5 @@
 package com.development.lakshya.quizzing;
 
-import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
@@ -28,10 +27,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class QuestionDetailsFragment extends Fragment {
+public class QuestionDetailsFragment_A3_2016240 extends Fragment {
 
     private CheckBox cb_option1,cb_option2;
-    private static Question question;
+    private static Question_A3_2016240 question;
     private TextView tv_questionDetail;
     private Button bv_save, bv_submit;
     private static SQLiteDatabase db;
@@ -40,10 +39,10 @@ public class QuestionDetailsFragment extends Fragment {
     private String fileName;
 
 
-    public static Fragment newInstance(Question q, SQLiteDatabase questions){
+    public static Fragment newInstance(Question_A3_2016240 q, SQLiteDatabase questions){
         question = q;
         db = questions;
-        return new QuestionDetailsFragment();
+        return new QuestionDetailsFragment_A3_2016240();
     }
 
     @Nullable
@@ -102,6 +101,7 @@ public class QuestionDetailsFragment extends Fragment {
                 cv.put("SELECTED_ANSWER",question.getSelectedAnswer());
                 Log.d(TAG, "onClick: " + question.getSelectedAnswer());
                 db.update("QUESTIONS",cv,"QUESTION=?",new String[]{question.getQuestion()});
+                Toast.makeText(getActivity(), "Your answer has been saved", Toast.LENGTH_SHORT).show();
             }
         });
 

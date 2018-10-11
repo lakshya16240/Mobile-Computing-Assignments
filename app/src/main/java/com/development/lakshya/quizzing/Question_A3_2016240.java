@@ -1,11 +1,11 @@
 package com.development.lakshya.quizzing;
 
-class Question {
+class Question_A3_2016240 {
 
     private String question;
     private String correctAnswer, selectedAnswer;
 
-    public Question(String question, String correctAnswer, String selectedAnswer) {
+    public Question_A3_2016240(String question, String correctAnswer, String selectedAnswer) {
         this.question = question;
         this.correctAnswer = correctAnswer;
         this.selectedAnswer = selectedAnswer;

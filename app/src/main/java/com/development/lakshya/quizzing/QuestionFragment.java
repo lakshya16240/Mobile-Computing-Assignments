@@ -31,12 +31,12 @@ import java.util.ArrayList;
 
 public class QuestionFragment extends Fragment {
 
-    private ArrayList<Question> questions;
+    private ArrayList<Question_A3_2016240> questions;
     private SQLiteOpenHelper helper;
     private SQLiteDatabase questionsDatabase;
     public static final String DB_NAME = "QuestionsTreasure";
     private RecyclerView rv_questions;
-    private QuestionsAdapter questionsAdapter;
+    private QuestionsAdapter_A3_2016240 questionsAdapter;
     public static final String TAG = "QuestionFragment";
     private Button bv_submitQuestion;
     private String fileName;
@@ -54,7 +54,7 @@ public class QuestionFragment extends Fragment {
 
         questions = new ArrayList<>();
 
-        helper = new QuestionsDatabaseHelper(getActivity(),DB_NAME,null,3);
+        helper = new QuestionsDatabaseHelper_A3_2016240(getActivity(),DB_NAME,null,3);
         try {
             Log.d(TAG, "onCreateView: ");
             questionsDatabase = helper.getWritableDatabase();
@@ -73,18 +73,18 @@ public class QuestionFragment extends Fragment {
                     String question = cursor.getString(cursor.getColumnIndex("QUESTION"));
                     String answer = cursor.getString(cursor.getColumnIndex("ANSWER"));
                     String selected_answer = cursor.getString(cursor.getColumnIndex("SELECTED_ANSWER"));
-                    questions.add(new Question(question,answer,selected_answer));
+                    questions.add(new Question_A3_2016240(question,answer,selected_answer));
                 }while(cursor.moveToNext());
             }
         }
 
-        questionsAdapter = new QuestionsAdapter(getActivity(), questions, new OnQuestionClickedListener() {
+        questionsAdapter = new QuestionsAdapter_A3_2016240(getActivity(), questions, new OnQuestionClickedListener() {
             @Override
-            public void onQuestionClicked(Question question) {
+            public void onQuestionClicked(Question_A3_2016240 question) {
                 Log.d(TAG, "onQuestionClicked: ");
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Fragment fragment = QuestionDetailsFragment.newInstance(question,questionsDatabase);
-                ft.replace(MainActivity.quizzingFrame.getId(), fragment);
+                Fragment fragment = QuestionDetailsFragment_A3_2016240.newInstance(question,questionsDatabase);
+                ft.replace(MainActivity_A3_2016240.quizzingFrame.getId(), fragment);
                 ft.commit();
                 ft.addToBackStack(null);
             }

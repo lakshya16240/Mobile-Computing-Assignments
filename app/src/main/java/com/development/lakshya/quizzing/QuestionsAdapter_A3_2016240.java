@@ -7,20 +7,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.QuestionViewHolder> {
+public class QuestionsAdapter_A3_2016240 extends RecyclerView.Adapter<QuestionsAdapter_A3_2016240.QuestionViewHolder> {
 
     private Context context;
-    private ArrayList<Question> questions;
+    private ArrayList<Question_A3_2016240> questions;
     private OnQuestionClickedListener onQuestionClickedListener;
 
-    public QuestionsAdapter(Context context, ArrayList<Question> questions, OnQuestionClickedListener onQuestionClickedListener) {
+    public QuestionsAdapter_A3_2016240(Context context, ArrayList<Question_A3_2016240> questions, OnQuestionClickedListener onQuestionClickedListener) {
         this.context = context;
         this.questions = questions;
         this.onQuestionClickedListener = onQuestionClickedListener;
@@ -37,7 +35,7 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Ques
     @Override
     public void onBindViewHolder(@NonNull final QuestionViewHolder questionViewHolder, int i) {
 
-        final Question question = questions.get(i);
+        final Question_A3_2016240 question = questions.get(i);
         questionViewHolder.tv_question.setText(question.getQuestion());
         questionViewHolder.tv_questionNumber.setText((i+1) + ". ");
         questionViewHolder.ll_question.setOnClickListener(new View.OnClickListener() {
