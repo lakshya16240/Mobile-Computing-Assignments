@@ -1,3 +1,5 @@
+#Mobile Computing Assignments
+
 This repository was made as a part of the 'Mobile Computing' course in IIIT Delhi. It has 3 branches, each branch being an individual assignment. Details of each assignment is given below : 
 
 ## Assignment 1 -> branch name - home-assignment-1
